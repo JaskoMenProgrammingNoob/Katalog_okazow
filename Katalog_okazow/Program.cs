@@ -1,0 +1,39 @@
+﻿using Katalog_okazow;
+
+class Program
+{
+
+
+
+    static void Main(string[] args)
+    {
+        bool menu = true;
+        Magazyn magazyn = new Magazyn();
+        Console.WriteLine("Witaj w programie do obsługi sklepu paleontologicznego.");
+        while (menu)
+        { 
+        Console.WriteLine();
+        Console.WriteLine("1. Dodaj okaz");
+        Console.WriteLine("2. Usuń okaz");
+        Console.WriteLine("3. Wyświetl okazy");
+        Console.WriteLine("4. Wyjdź z programu");
+        int wybor1 = int.Parse(Console.ReadLine());
+            switch (wybor1)
+            {
+                case 1:
+                    magazyn.DodajOkaz();
+
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    menu = false;
+                    break;
+            }
+
+
+            }
+    }
+}
