@@ -33,7 +33,7 @@ namespace Katalog_okazow
                 dostepnosc = false;
             }
             Okaz okaz = new Okaz(nazwa, wymiarDlugosc, wymiarSzerokosc, cena, era, pochodzenie, dostepnosc);
-
+            //
             Okazy.Add(okaz);
            
            
