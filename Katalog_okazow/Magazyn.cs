@@ -28,7 +28,7 @@ namespace Katalog_okazow
              if(decyzja == "tak")
              {
                 dostepnosc = true;
-                Console.WriteLine(dostepnosc ? "tak" : "nie");
+                
              } else if (decyzja == "nie")
             {
                 dostepnosc = false;
@@ -57,7 +57,7 @@ namespace Katalog_okazow
                 Console.WriteLine($"Cena: {Okazy[i].Cena}");
                 Console.WriteLine($"Era: {Okazy[i].Era}");
                 Console.WriteLine($"Pochdzenie: {Okazy[i].Pochodzenie}");
-                Console.WriteLine($"W magazynie: {Okazy[i].Dostepnosc}");
+                Console.WriteLine($"W magazynie: {(Okazy[i].Dostepnosc ? "tak" : "nie" )}");
                 Console.WriteLine();
 
             }
