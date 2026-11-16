@@ -27,7 +27,8 @@ namespace Katalog_okazow
              string decyzja = Console.ReadLine();
              if(decyzja == "tak")
              {
-                 dostepnosc = true;
+                dostepnosc = true;
+                Console.WriteLine(dostepnosc ? "tak" : "nie");
              } else if (decyzja == "nie")
             {
                 dostepnosc = false;
@@ -45,22 +46,53 @@ namespace Katalog_okazow
             
             public List<Okaz> WyswietlOkaz()
         {
-            
+            Console.WriteLine("=====LISTA OKAZÓW======");
             for(int i = 0; i < Okazy.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {Okazy[i].Nazwa}");
                 
+                Console.WriteLine($"Okaz nr. {i + 1}");
+                Console.WriteLine($"Nazwa: {Okazy[i].Nazwa}");
+                Console.WriteLine($"Długość: {Okazy[i].WymiarDlugosc}");
+                Console.WriteLine($"Szerokość: {Okazy[i].WymiarSzerokosc}");
+                Console.WriteLine($"Cena: {Okazy[i].Cena}");
+                Console.WriteLine($"Era: {Okazy[i].Era}");
+                Console.WriteLine($"Pochdzenie: {Okazy[i].Pochodzenie}");
+                Console.WriteLine($"W magazynie: {Okazy[i].Dostepnosc}");
+                Console.WriteLine();
+
             }
             return Okazy;
         }
             
             public List<Okaz> UsunOkaz()
         {
+            Console.WriteLine("Wybierz z listy okaz, który chcesz usunąć (wprowadź odpowiedni numer): ");
+            int i = Wejscie.WczytajLiczbe("Podaj numer okazu do usunięcia: ", 1, Okazy.Count);
+            Okaz wybor = Okazy[i - 1];
+            
+            Okazy.RemoveAt(i - 1);
 
+            return Okazy;
         }
-            
-            
-           
+
+
+        //Klasa pomocnicza
+        public static class Wejscie
+        { 
+            public static int WczytajLiczbe(string pytanie, int min, int max)
+            {
+                while (true)
+                {
+                    Console.Write(pytanie);
+                    string tekst = Console.ReadLine() ?? "";
+                    if (int.TryParse(tekst, out int Liczba) && Liczba >= min && Liczba <= max)
+                        return Liczba;
+
+                    Console.WriteLine($"Podaj liczbę od {min} do {max}.");
+                }
+            }
+        }
+
 
     }
 }

@@ -27,6 +27,8 @@ class Program
                     Console.WriteLine("Okaz został dodany. ");
                     break;
                 case 2:
+                    magazyn.UsunOkaz();
+                    Console.WriteLine("Usunięto okaz.");
                     break;
                 case 3:
                     magazyn.WyswietlOkaz();
