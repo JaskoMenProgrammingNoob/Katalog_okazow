@@ -54,7 +54,10 @@ namespace Katalog_okazow
             return Okazy;
         }
             
-            
+            public List<Okaz> UsunOkaz()
+        {
+
+        }
             
             
            
