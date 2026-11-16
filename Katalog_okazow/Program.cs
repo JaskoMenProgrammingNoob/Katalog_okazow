@@ -22,11 +22,12 @@ class Program
             {
                 case 1:
                     magazyn.DodajOkaz();
-
+                    Console.WriteLine("Okaz został dodany. ");
                     break;
                 case 2:
                     break;
                 case 3:
+                    magazyn.WyswietlOkaz();
                     break;
                 case 4:
                     menu = false;

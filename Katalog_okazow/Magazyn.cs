@@ -7,7 +7,7 @@ namespace Katalog_okazow
     public class Magazyn
     {
         public List<Okaz> Okazy { get; set; } = [];
-
+        
         public  Okaz DodajOkaz()
         {
             Console.WriteLine("Podaj nazwę: ");
@@ -33,22 +33,31 @@ namespace Katalog_okazow
                 dostepnosc = false;
             }
             Okaz okaz = new Okaz(nazwa, wymiarDlugosc, wymiarSzerokosc, cena, era, pochodzenie, dostepnosc);
-            //
+            
             Okazy.Add(okaz);
            
            
             
             return okaz;
             
+        }
             
             
+            public List<Okaz> WyswietlOkaz()
+        {
             
+            for(int i = 0; i < Okazy.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {Okazy[i].Nazwa}");
+                
+            }
+            return Okazy;
+        }
             
             
             
             
            
 
-        }
     }
 }
