@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Katalog_okazow
 {
@@ -75,6 +77,19 @@ namespace Katalog_okazow
             return Okazy;
         }
 
+        public void ZapiszStan()
+        {
+            string zapisz = "";
+            foreach(Okaz o in Okazy)
+            {
+                zapisz += $"{o.Nazwa};{o.WymiarDlugosc};{o.WymiarSzerokosc};{o.Cena:F2};{o.Era};{o.Pochodzenie};{o.Dostepnosc}\n";
+                
+            }
+            File.WriteAllText("Katalog_okazów.txt", zapisz);
+            
+                 
+            
+        }
 
         //Klasa pomocnicza
         public static class Wejscie

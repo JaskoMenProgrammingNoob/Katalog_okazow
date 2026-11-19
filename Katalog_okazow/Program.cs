@@ -34,6 +34,7 @@ class Program
                     magazyn.WyswietlOkaz();
                     break;
                 case 4:
+                    magazyn.ZapiszStan();
                     break;
                 case 5:
                     break;
